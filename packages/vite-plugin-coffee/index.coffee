@@ -1,15 +1,13 @@
 CoffeeScript = require 'coffeescript'
 
-coffee = ({ jsx }) ->
+coffee = (config={}) =>
   name: 'coffee'
   transform: (src, id) ->
     if /\.coffee$/.test id
-      { js, sourceMap } = CoffeeScript.compile src,
-        sourceMap: on
-        transpile: if jsx
-          presets: ['@babel/react']
-
-      code: js
-      map: sourceMap
+      { js:code, sourceMap:map } = CoffeeScript.compile src, config
+      {
+        code
+        map
+      }
 
 module.exports = coffee

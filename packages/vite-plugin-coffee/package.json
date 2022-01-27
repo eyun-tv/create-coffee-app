@@ -1,5 +1,5 @@
 {
-  "name": "vite-plugin-coffee",
+  "name": "@rmw/vite-plugin-coffee",
   "version": "2.2.1",
   "description": "Coffeescript plugin for Vitejs",
   "main": "dist/index.js",
